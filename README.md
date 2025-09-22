@@ -2,6 +2,10 @@
 
 Uma aplicação web moderna para visualização e gerenciamento de funcionários, desenvolvida com React e TypeScript. A aplicação oferece uma interface intuitiva para consultar informações dos colaboradores, com recursos de busca avançada e design totalmente responsivo.
 
+## 🚀 Demo Online
+
+Acesse a aplicação em funcionamento: [https://teste-betalent-frontend.vercel.app/](https://teste-betalent-frontend.vercel.app/)
+
 ## Características Principais
 
 O sistema foi projetado pensando na experiência do usuário, oferecendo:
