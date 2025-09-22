@@ -31,13 +31,16 @@ function App() {
   }, []);
 
   const filteredEmployees = useMemo(() => {
-    if (!searchTerm) return employees;
+    if (!searchTerm || searchTerm.trim() === '') {
+      return employees;
+    }
 
-    const normalizedSearch = searchTerm.toLowerCase();
+    const searchLower = searchTerm.toLowerCase().trim();
+
     return employees.filter((employee) => {
-      const nameMatch = employee.name.toLowerCase().includes(normalizedSearch);
-      const jobMatch = employee.job.toLowerCase().includes(normalizedSearch);
-      const phoneMatch = employee.phone.includes(searchTerm.replace(/\D/g, ''));
+      const nameMatch = employee.name.toLowerCase().includes(searchLower);
+      const jobMatch = employee.job.toLowerCase().includes(searchLower);
+      const phoneMatch = employee.phone.toLowerCase().includes(searchLower);
 
       return nameMatch || jobMatch || phoneMatch;
     });
