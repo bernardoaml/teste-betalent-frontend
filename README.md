@@ -1,46 +1,122 @@
-# Getting Started with Create React App
+# BeTalent - Sistema de Gerenciamento de Funcionários
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Uma aplicação web moderna para visualização e gerenciamento de funcionários, desenvolvida com React e TypeScript. A aplicação oferece uma interface intuitiva para consultar informações dos colaboradores, com recursos de busca avançada e design totalmente responsivo.
 
-## Available Scripts
+## Características Principais
 
-In the project directory, you can run:
+O sistema foi projetado pensando na experiência do usuário, oferecendo:
 
-### `npm start`
+- Listagem completa de funcionários em formato de tabela
+- Sistema de busca inteligente que permite filtrar por nome, cargo ou telefone
+- Formatação automática de números de telefone e datas
+- Interface adaptada para desktop e dispositivos móveis
+- Cards expansíveis no mobile para melhor visualização dos dados
+- Carregamento otimizado com estados visuais de feedback
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tecnologias Utilizadas
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React 19 com TypeScript para desenvolvimento da interface
+- CSS3 puro para estilização e responsividade
+- JSON Server para simulação de API REST
+- Testing Library para testes automatizados
 
-### `npm test`
+## Requisitos do Sistema
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para executar este projeto em sua máquina, você precisará ter instalado:
 
-### `npm run build`
+- Node.js versão 14 ou superior
+- npm ou Yarn como gerenciador de pacotes
+- Git para controle de versão
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Como Executar o Projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Passo 1: Preparação do Ambiente
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone o repositório e navegue até a pasta do projeto:
 
-### `npm run eject`
+```bash
+git clone https://github.com/bernardoaml/teste-betalent-frontend
+cd teste-betalent-frontend/betalent-employees
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Passo 2: Instalação das Dependências
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Instale todas as dependências necessárias:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Passo 3: Configuração da API
 
-## Learn More
+Em um terminal separado, inicie o servidor da API:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd ../api-data
+npx json-server db.json --port 3005
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+O servidor da API ficará disponível em http://localhost:3005
+
+### Passo 4: Execução da Aplicação
+
+De volta ao diretório principal, inicie a aplicação:
+
+```bash
+npm start
+```
+
+A aplicação será executada em http://localhost:3000
+
+## Arquitetura do Projeto
+
+O projeto segue uma estrutura organizada e escalável:
+
+```
+src/
+├── components/          # Componentes reutilizáveis
+│   ├── Header/         # Cabeçalho da aplicação
+│   ├── SearchBar/      # Campo de busca
+│   └── EmployeeTable/  # Tabela e cards dos funcionários
+├── services/           # Integração com APIs
+├── types/             # Definições de tipos TypeScript
+├── utils/             # Funções utilitárias
+└── data/              # Dados e configurações
+```
+
+## Funcionalidades Detalhadas
+
+### Sistema de Busca
+O sistema permite filtrar funcionários de forma inteligente:
+- Busca por nome completo ou parcial
+- Filtro por cargo ou departamento
+- Busca por números de telefone
+
+### Interface Responsiva
+A aplicação se adapta perfeitamente a diferentes dispositivos:
+- Desktop: Tabela completa com todas as informações
+- Mobile: Cards expansíveis para melhor usabilidade
+- Transições suaves e feedback visual
+
+### Tratamento de Dados
+- Formatação automática de telefones no padrão brasileiro
+- Datas apresentadas no formato DD/MM/AAAA
+- Estados de carregamento e erro para melhor experiência
+
+## Scripts de Desenvolvimento
+
+```bash
+npm start          # Inicia o servidor de desenvolvimento
+npm run build      # Gera build de produção
+npm test           # Executa a suíte de testes
+```
+
+## Considerações Técnicas
+
+Esta aplicação foi desenvolvida com foco em:
+- Performance e otimização de renderização
+- Código limpo e manutenível
+- Experiência do usuário intuitiva
+- Responsividade e acessibilidade
+
+O projeto utiliza uma API simulada para demonstrar a integração com serviços backend, facilitando o desenvolvimento e testes da interface.
