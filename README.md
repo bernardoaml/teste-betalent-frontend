@@ -108,7 +108,7 @@ A aplicação se adapta perfeitamente a diferentes dispositivos:
 ```bash
 npm start          # Inicia o servidor de desenvolvimento
 npm run build      # Gera build de produção
-npm test           # Executa a suíte de testes
+npm test           # Executa a bateria de testes
 ```
 
 ## Considerações Técnicas
