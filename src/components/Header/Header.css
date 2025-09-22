@@ -1,0 +1,26 @@
+.header {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px;
+}
+
+.header-logo-img {
+  height: 40px;
+  width: auto;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 20px;
+  }
+}

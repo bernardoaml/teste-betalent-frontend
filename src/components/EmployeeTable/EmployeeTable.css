@@ -1,0 +1,148 @@
+.table-container {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  display: table;
+}
+
+.employee-table thead {
+  background-color: #0500FF;
+  color: #FFFFFF;
+}
+
+.employee-table th {
+  padding: 16px 24px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.employee-table tbody tr {
+  border-bottom: 1px solid #EFEFEF;
+  transition: background-color 0.2s ease;
+}
+
+.employee-table tbody tr:hover {
+  background-color: #F9F9F9;
+}
+
+.employee-table td {
+  padding: 16px 24px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #1C1C1C;
+}
+
+.employee-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.employee-name {
+  font-weight: 500;
+  color: #1C1C1C;
+}
+
+.mobile-info {
+  display: none;
+}
+
+.mobile-cards {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .table-container {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .employee-table {
+    display: none;
+  }
+
+  .mobile-cards {
+    display: block;
+  }
+
+  .employee-card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    cursor: pointer;
+  }
+
+  .card-header .employee-name {
+    flex: 1;
+    margin-left: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1C1C1C;
+  }
+
+  .chevron-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .card-details {
+    display: none;
+    padding: 0 16px 16px 16px;
+    border-top: 1px solid #EFEFEF;
+    margin-top: 8px;
+  }
+
+  .employee-card.expanded .card-details {
+    display: block;
+  }
+
+  .employee-card.expanded .chevron-icon {
+    transform: rotate(90deg);
+  }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+
+  .detail-label {
+    font-size: 14px;
+    color: #9E9E9E;
+  }
+
+  .detail-value {
+    font-size: 14px;
+    color: #1C1C1C;
+    font-weight: 500;
+  }
+}
+
+/* Desktop only columns */
+.hide-mobile {
+  display: table-cell;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+}
