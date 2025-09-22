@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Employee } from '../../types/Employee';
 import { formatDate, formatPhone } from '../../utils/formatters';
-import { getEmployeeImage } from '../../data/employeeImages';
 import './EmployeeTable.css';
 
 interface EmployeeTableMobileProps {
@@ -32,9 +31,6 @@ const EmployeeTableMobile: React.FC<EmployeeTableMobileProps> = ({ employees }) 
               src={employee.image}
               alt={employee.name}
               className="employee-avatar"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = getEmployeeImage(employee.name);
-              }}
             />
             <span className="employee-name">{employee.name}</span>
             <svg className="chevron-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">

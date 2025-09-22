@@ -1,7 +1,6 @@
 import React from 'react';
 import { Employee } from '../../types/Employee';
 import { formatDate, formatPhone } from '../../utils/formatters';
-import { getEmployeeImage } from '../../data/employeeImages';
 import EmployeeTableMobile from './EmployeeTableMobile';
 import './EmployeeTable.css';
 
@@ -30,9 +29,6 @@ const EmployeeTable: React.FC<EmployeeTableProps> = ({ employees }) => {
                   src={employee.image}
                   alt={employee.name}
                   className="employee-avatar"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = getEmployeeImage(employee.name);
-                  }}
                 />
               </td>
               <td>
