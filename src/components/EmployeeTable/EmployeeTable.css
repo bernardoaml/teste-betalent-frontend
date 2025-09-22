@@ -56,6 +56,10 @@
   display: none;
 }
 
+.desktop-table {
+  display: block;
+}
+
 .mobile-cards {
   display: none;
 }
@@ -63,12 +67,29 @@
 /* Mobile styles */
 @media (max-width: 768px) {
   .table-container {
-    background: transparent;
-    box-shadow: none;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
   }
 
   .employee-table {
+    display: table;
+    width: 100%;
+  }
+
+  .employee-table tbody {
     display: none;
+  }
+
+  .employee-table th:first-child {
+    width: 60px;
+    padding-left: 16px;
+  }
+
+  .employee-table th:nth-child(2) {
+    width: calc(100% - 60px);
+    padding-left: 12px;
   }
 
   .mobile-cards {
@@ -76,10 +97,14 @@
   }
 
   .employee-card {
-    background-color: #FFFFFF;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    background-color: transparent;
+    border-bottom: 1px solid #EFEFEF;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .employee-card:last-child {
+    border-bottom: none;
   }
 
   .card-header {
@@ -87,6 +112,13 @@
     align-items: center;
     padding: 16px;
     cursor: pointer;
+  }
+
+  .card-header .employee-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   .card-header .employee-name {
@@ -115,7 +147,7 @@
   }
 
   .employee-card.expanded .chevron-icon {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
   }
 
   .detail-row {

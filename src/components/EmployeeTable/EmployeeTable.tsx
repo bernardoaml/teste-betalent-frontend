@@ -46,7 +46,6 @@ const EmployeeTable: React.FC<EmployeeTableProps> = ({ employees }) => {
         </tbody>
       </table>
 
-      {/* Mobile card view */}
       <EmployeeTableMobile employees={employees} />
     </div>
   );
