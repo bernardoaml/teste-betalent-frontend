@@ -11,11 +11,12 @@ interface EmployeeTableMobileProps {
 const EmployeeTableMobile: React.FC<EmployeeTableMobileProps> = ({ employees }) => {
   const [expandedCards, setExpandedCards] = useState<string[]>([]);
 
-  const toggleCard = (employeeId: string) => {
+  const toggleCard = (employeeId: number) => {
+    const idString = employeeId.toString();
     setExpandedCards((prev) =>
-      prev.includes(employeeId)
-        ? prev.filter(id => id !== employeeId)
-        : [...prev, employeeId]
+      prev.includes(idString)
+        ? prev.filter(id => id !== idString)
+        : [...prev, idString]
     );
   };
 
@@ -24,7 +25,7 @@ const EmployeeTableMobile: React.FC<EmployeeTableMobileProps> = ({ employees }) 
       {employees.map((employee) => (
         <div
           key={employee.id}
-          className={`employee-card ${expandedCards.includes(employee.id) ? 'expanded' : ''}`}
+          className={`employee-card ${expandedCards.includes(employee.id.toString()) ? 'expanded' : ''}`}
         >
           <div className="card-header" onClick={() => toggleCard(employee.id)}>
             <img
@@ -38,7 +39,7 @@ const EmployeeTableMobile: React.FC<EmployeeTableMobileProps> = ({ employees }) 
             <span className="employee-name">{employee.name}</span>
             <svg className="chevron-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
-                d="M9 18L15 12L9 6"
+                d="M6 9L12 15L18 9"
                 stroke="#1C1C1C"
                 strokeWidth="2"
                 strokeLinecap="round"
