@@ -47,20 +47,9 @@ Instale todas as dependências necessárias:
 npm install
 ```
 
-### Passo 3: Configuração da API
+### Passo 3: Execução da Aplicação
 
-Em um terminal separado, inicie o servidor da API:
-
-```bash
-cd ../api-data
-npx json-server db.json --port 3005
-```
-
-O servidor da API ficará disponível em http://localhost:3005
-
-### Passo 4: Execução da Aplicação
-
-De volta ao diretório principal, inicie a aplicação:
+Inicie a aplicação:
 
 ```bash
 npm start
@@ -119,4 +108,15 @@ Esta aplicação foi desenvolvida com foco em:
 - Experiência do usuário intuitiva
 - Responsividade e acessibilidade
 
-O projeto utiliza uma API simulada para demonstrar a integração com serviços backend, facilitando o desenvolvimento e testes da interface.
+O projeto utiliza dados estáticos integrados, facilitando o deploy e eliminando a necessidade de configuração de backend.
+
+## Deploy
+
+O projeto está preparado para deploy na Vercel:
+
+1. Conecte seu repositório GitHub à Vercel
+2. Configure o diretório raiz como `betalent-employees`
+3. A Vercel detectará automaticamente as configurações do React
+4. O deploy será feito automaticamente a cada push na branch main
+
+A aplicação funciona completamente standalone, sem necessidade de servidor backend externo.
